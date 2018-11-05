@@ -1,0 +1,97 @@
+/* body{
+	scroll-snap-type: mandatory;
+	overflow-y: scroll;
+} */
+body{
+	background: #333;
+	scroll-snap-type: mandatory;
+	overflow-y: scroll;
+}
+.one{
+	background-color : red;
+	color : #fff;
+	text-align : center;
+	height : 100vh;
+	scroll-snap-align : start;
+}
+.two{
+	background-color : lightblue;
+	color : #fff;
+	text-align : center;
+	height : 100vh;
+	scroll-snap-align : start;
+}
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: "montserrat";
+}
+
+.middle{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.card{
+	cursor: pointer;
+	width: 340px;
+	height:480px;
+}
+.front,.back{
+	width : 100%;
+	height : 100%;
+	overflow : hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	transition: transform .6s linear;
+}
+.front img{
+	height: 100%;
+
+}
+
+.front{
+	transform: perspective(600px) rotateY(0deg);
+}
+
+.back{
+	background: #f1f1f1;
+	transform: perspective(600px) rotateY(180deg);
+}
+
+.back-content{
+	color: #2c3e50;
+	text-align: center;
+	width: 100%;
+
+}
+.sm{
+	margin: 20px 0;
+}
+.sm a{
+	display: inline-flex;
+	width: 40px;
+	height : 40px;
+	/*justify-content: center;*/
+	align-items: center;
+	color: #a6b5c4;
+	font-size: 18px;
+	transform: 0.4s;
+	border-radius: 50%;
+}
+
+.sm a:hover{
+	background: #2c3e50;
+	color: white;
+
+}
+
+.card:hover > .front{
+	transform: perspective(600px) rotateY(-180deg);
+
+}
+.card:hover > .back{
+	transform: perspective(600px) rotateY(0deg);
+
+}
